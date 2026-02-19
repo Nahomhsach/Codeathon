@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RapidRelief | Emergency Response Network</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://img.freepik.com/premium-vector/natural-disaster-icon-vector-image-can-be-used-natural-disaster_120816-287186.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!--  NAVIGATION  -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" id="logoHome">
+      <i class="fas fa-shield-alt"></i> RapidRelief
+    </div>
+    
+    <!-- Mobile menu button -->
+    <div class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+    
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#" onclick="goHome(); return false;">Home</a></li>
+      <li><a href="#" onclick="scrollToImpact(); return false;">Impact</a></li>
+      <li><a href="#" onclick="showFeatures(); return false;">Features</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Info <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" onclick="showPage('aboutPage'); return false;">About Us</a></li>
+          <li><a href="#" onclick="showPage('howItWorksPage'); return false;">How It Works</a></li>
+          <li><a href="#" onclick="showPage('storiesPage'); return false;">Success Stories</a></li>
+          <li><a href="#" onclick="showPage('getInvolvedPage'); return false;">Get Involved</a></li>
+          <li><a href="#" onclick="showPage('resourcesPage'); return false;">Resources</a></li>
+          <li><a href="#" onclick="showPage('contactPage'); return false;">Contact</a></li>
+          <li><a href="#" onclick="showPage('faqPage'); return false;">FAQ</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="nav-auth">
+      <button id="loginBtnNav" class="btn-nav login-btn">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <button id="signupBtnNav" class="btn-nav signup-btn">
+        <i class="fas fa-user-plus"></i> Join
+      </button>
+      <button id="logoutBtnNav" class="btn-nav logout-btn hidden">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!--  HOME PAGE  -->
+<section id="homePage">
+  <!-- HERO SECTION -->
+  <div class="hero-wrapper">
+    <div class="hero">
+      <div class="hero-content">
+        <h1><i class="fas fa-heart-pulse"></i> Help When It Counts Most</h1>
+        <p>
+          When disaster hits, families lose everything in hours. We connect real people, 
+          volunteers like you with communities that need help right now. No bureaucracy. Just people helping people.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn primary large" id="ctaStart" onclick="showAuth()">
+            <i class="fas fa-rocket"></i> I Want to Help
+          </button>
+          <button class="btn secondary large" onclick="scrollToImpact()">
+            <i class="fas fa-info-circle"></i> See the Impact
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK STATS SECTION -->
+  <section class="quick-stats">
+    <div class="stats-container">
+      <div class="stat">
+        <h3>4</h3>
+        <p>Active Volunteers</p>
+      </div>
+      <div class="stat">
+        <h3>N/A</h3>
+        <p>Crisis Zones</p>
+      </div>
+      <div class="stat">
+        <h3>N/A</h3>
+        <p>Aid Units Delivered</p>
+      </div>
+      <div class="stat">
+        <h3>N/A%</h3>
+        <p>Poverty Reduced</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT SECTION -->
+  <section class="impact" id="impactSection">
+    <div class="impact-header">
+      <h2>Real Problems. Real Solutions.</h2>
+      <p>In 2024 alone, 26 million people were pushed into poverty by disasters. We're changing that.</p>
+    </div>
+
+    <div class="impact-grid">
+      <div class="impact-card primary-card">
+        <div class="card-icon">
+          <i class="fas fa-water"></i>
+        </div>
+        <h3>Families Get Food & Water Today</h3>
+        <p>Sarah's family lost their home in the floods last month. Volunteers showed up within 4 hours with food, water, and medical supplies. That speed kept them from losing everything permanently.</p>
+        <span class="card-tag">Real Impact</span>
+      </div>
+
+      <div class="impact-card secondary-card">
+        <div class="card-icon">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        <h3>Local Coordinators Organize Everything</h3>
+        <p>When the hurricane hit, Marcus (a local coordinator) used our app to coordinate 50+ volunteers in 2 hours. They distributed supplies to 300 families before the power even came back on.</p>
+        <span class="card-tag">Real Impact</span>
+      </div>
+
+      <div class="impact-card tertiary-card">
+        <div class="card-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Communities Actually Recover</h3>
+        <p>When aid gets there fast, families don't lose their jobs, kids stay in school, and businesses reopen. Quick action = permanent solutions instead of permanent poverty.</p>
+        <span class="card-tag">Real Impact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <h2>Here's How It Actually Works</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Disaster Strikes</h3>
+        <p>A flood, earthquake, or hurricane hits a community</p>
+        <div class="step-icon"><i class="fas fa-bell"></i></div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>You Get Notified</h3>
+        <p>We ping nearby volunteers in real-time</p>
+        <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>You & Coordinators Plan</h3>
+        <p>Figure out who brings what, where to go first</p>
+        <div class="step-icon"><i class="fas fa-handshake"></i></div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Families Get Help</h3>
+        <p>Food, water, and safety reach them fast</p>
+        <div class="step-icon"><i class="fas fa-box"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features" id="featuresSection">
+    <h2>What You Can Actually Do</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h3><i class="fas fa-users"></i> You're a Volunteer?</h3>
+        <ul>
+          <li>✓ See disaster zones near you</li>
+          <li>✓ Sign up for specific missions</li>
+          <li>✓ Track your impact</li>
+          <li>✓ Get real-time updates</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <h3><i class="fas fa-clipboard-check"></i> Running the Show?</h3>
+        <ul>
+          <li>✓ Set up disaster zones quickly</li>
+          <li>✓ Create and assign missions</li>
+          <li>✓ Track where supplies go</li>
+          <li>✓ See what's actually working</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <h3><i class="fas fa-chart-pie"></i> The Numbers Don't Lie</h3>
+        <ul>
+          <li>✓ How many people you've helped</li>
+          <li>✓ Which areas are doing better</li>
+          <li>✓ Response times & reach</li>
+          <li>✓ Team performance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!--  ABOUT US PAGE  -->
+<section id="aboutPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-info-circle"></i> About RapidRelief</h1>
+      <p>Who we are and why we do what we do</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-mission">
+        <div class="mission-card">
+          <i class="fas fa-bullseye"></i>
+          <h2>Our Mission</h2>
+          <p>To connect volunteers with disaster-affected communities instantly, cutting through bureaucracy to deliver help when it matters most. We believe that quick action saves not just lives, but entire communities from long-term poverty.</p>
+        </div>
+        <div class="mission-card">
+          <i class="fas fa-eye"></i>
+          <h2>Our Vision</h2>
+          <p>A world where no community faces disaster alone where help arrives within hours, not days, and where every volunteer can make a direct, measurable impact on the ground.</p>
+        </div>
+      </div>
+
+      <div class="about-story">
+        <h2>Our Story</h2>
+        <div class="story-timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <h3>The Beginning</h3>
+              <p>Founded after Hurricane Marcus showed how slow traditional aid can be. Our founder, a former emergency responder, saw families waiting days for help while volunteers stood by, unable to coordinate.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <h3>First Response</h3>
+              <p>Successfully coordinated 50+ volunteers during the Coastal Floods, reaching 300 families within 24 hours. This proved that community-driven response works.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <h3>Growing Network</h3>
+              <p>Expanded to 4 active volunteers (and counting!) with coordinators in key regions. Building the infrastructure for rapid response anywhere, anytime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="about-values">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+          <div class="value-item">
+            <i class="fas fa-bolt"></i>
+            <h3>Speed Matters</h3>
+            <p>Every hour counts. We prioritize getting help to communities as fast as possible.</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-hand-holding-heart"></i>
+            <h3>Community First</h3>
+            <p>We listen to local needs and let communities guide our response.</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Transparency</h3>
+            <p>Every action, every supply, every outcome is tracked and shared openly.</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-users"></i>
+            <h3>Empowerment</h3>
+            <p>We give volunteers the tools and information they need to make a real difference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  HOW IT WORKS DETAILED PAGE  -->
+<section id="howItWorksPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-map-signs"></i> How RapidRelief Works</h1>
+      <p>A step-by-step guide for volunteers and coordinators</p>
+    </div>
+
+    <div class="how-it-works-detailed">
+      <div class="role-tabs">
+        <button class="role-tab active" onclick="showRoleTab('volunteer')">For Volunteers</button>
+        <button class="role-tab" onclick="showRoleTab('coordinator')">For Coordinators</button>
+      </div>
+
+      <div id="volunteerGuide" class="role-content">
+        <div class="guide-step">
+          <div class="step-number-large">1</div>
+          <div class="step-content">
+            <h3>Sign Up & Set Your Preferences</h3>
+            <p>Create your volunteer profile and tell us:</p>
+            <ul>
+              <li>Your location and how far you're willing to travel</li>
+              <li>What skills you have (medical, construction, driving, etc.)</li>
+              <li>What supplies you can contribute (vehicle, tools, etc.)</li>
+              <li>Your availability (weekends, evenings, on-call)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">2</div>
+          <div class="step-content">
+            <h3>Get Real-Time Alerts</h3>
+            <p>When a disaster strikes near you, you'll receive:</p>
+            <ul>
+              <li>Push notification with location and urgency level</li>
+              <li>What's needed right now (food, water, medical, labor)</li>
+              <li>How many volunteers are already responding</li>
+              <li>Contact info for the on-site coordinator</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">3</div>
+          <div class="step-content">
+            <h3>Choose Your Mission</h3>
+            <p>Browse active missions and sign up for what fits you:</p>
+            <ul>
+              <li>Food distribution</li>
+              <li>Water delivery</li>
+              <li>Medical supply transport</li>
+              <li>Shelter setup</li>
+              <li>Search and rescue support</li>
+              <li>Damage assessment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">4</div>
+          <div class="step-content">
+            <h3>Coordinate & Deploy</h3>
+            <p>Join the mission chat to coordinate with other volunteers and the on-site coordinator. Get exact locations, timing, and instructions before heading out.</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">5</div>
+          <div class="step-content">
+            <h3>Track Your Impact</h3>
+            <p>After each mission, log what you did and see:</p>
+            <ul>
+              <li>How many people you helped</li>
+              <li>Total hours volunteered</li>
+              <li>Supplies delivered</li>
+              <li>Your impact over time</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="coordinatorGuide" class="role-content hidden">
+        <div class="guide-step">
+          <div class="step-number-large">1</div>
+          <div class="step-content">
+            <h3>Get Certified</h3>
+            <p>Complete our coordinator training program to learn:</p>
+            <ul>
+              <li>Emergency response protocols</li>
+              <li>Volunteer management best practices</li>
+              <li>Supply chain coordination</li>
+              <li>Safety and risk management</li>
+              <li>Communication strategies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">2</div>
+          <div class="step-content">
+            <h3>Create a Disaster Zone</h3>
+            <p>When disaster hits, quickly set up a zone with:</p>
+            <ul>
+              <li>Location and affected area</li>
+              <li>Type of disaster and severity</li>
+              <li>Immediate needs assessment</li>
+              <li>Safety warnings and access info</li>
+              <li>Number of affected families</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">3</div>
+          <div class="step-content">
+            <h3>Create & Assign Missions</h3>
+            <p>Break down the response into specific missions:</p>
+            <ul>
+              <li>Food distribution (volunteers needed, location, timing)</li>
+              <li>Water delivery (supply source, drop-off points)</li>
+              <li>Medical support (setup field clinic, supply runs)</li>
+              <li>Shelter operations (setup, staffing, supplies)</li>
+              <li>Assessment teams (damage reports, needs updates)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">4</div>
+          <div class="step-content">
+            <h3>Coordinate Volunteers</h3>
+            <p>Use our tools to manage your team:</p>
+            <ul>
+              <li>See who's available and their skills</li>
+              <li>Assign roles based on experience</li>
+              <li>Track who's deployed and where</li>
+              <li>Communicate updates in real-time</li>
+              <li>Monitor safety and check-ins</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number-large">5</div>
+          <div class="step-content">
+            <h3>Track & Report</h3>
+            <p>Monitor mission progress and report outcomes:</p>
+            <ul>
+              <li>Real-time supply tracking</li>
+              <li>People reached per mission</li>
+              <li>Volunteer hours logged</li>
+              <li>Challenges and lessons learned</li>
+              <li>Impact reports for stakeholders</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="safety-protocols">
+        <h3><i class="fas fa-shield-alt"></i> Safety First: Our Protocols</h3>
+        <div class="protocols-grid">
+          <div class="protocol-card">
+            <h4>For Volunteers</h4>
+            <ul>
+              <li>Never enter unsafe areas alone</li>
+              <li>Always check in with coordinators</li>
+              <li>Report any hazards immediately</li>
+              <li>Carry ID and emergency contacts</li>
+              <li>Follow all on-site instructions</li>
+            </ul>
+          </div>
+          <div class="protocol-card">
+            <h4>For Coordinators</h4>
+            <ul>
+              <li>Assess safety before deploying volunteers</li>
+              <li>Maintain communication at all times</li>
+              <li>Track volunteer locations</li>
+              <li>Have evacuation plans ready</li>
+              <li>Coordinate with official responders</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  SUCCESS STORIES PAGE  -->
+<section id="storiesPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-star"></i> Success Stories</h1>
+      <p>Real impact from real people</p>
+    </div>
+
+    <div class="stories-grid">
+      <div class="story-card featured">
+        <div class="story-image">
+          <i class="fas fa-water"></i>
+        </div>
+        <div class="story-content">
+          <span class="story-location">Northeast Floods | March 2026</span>
+          <h3>"They showed up before the water receded"</h3>
+          <p class="story-quote">"(*Fake Story*)When the floodwaters started rising, we thought we'd be on our own for days. Within 4 hours, RapidRelief volunteers were at our door with sandbags, food, and drinking water. They helped us move our belongings to higher ground and checked on our elderly neighbors. I've never seen anything like it."</p>
+          <p class="story-author">  Sarah Jenkins, flood survivor</p>
+          <div class="story-stats">
+            <span><i class="fas fa-users"></i> 50+ volunteers</span>
+            <span><i class="fas fa-box"></i> 300+ families helped</span>
+            <span><i class="fas fa-clock"></i> 4-hour response</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-image">
+          <i class="fas fa-hurricane"></i>
+        </div>
+        <div class="story-content">
+          <span class="story-location">Coastal Storm | January 2026</span>
+          <h3>Marcus's Story: From Volunteer to Coordinator</h3>
+          <p>"(*Fake Story*)I started as a volunteer during the hurricane, just helping distribute water. But when I saw how chaotic things were, I stepped up to coordinate. Within 2 hours, we had 50 volunteers organized into teams. We reached 300 families before the power even came back on. Now I train new coordinators full-time."</p>
+          <p class="story-author">  Marcus Rodriguez, Operations Director</p>
+          <div class="story-stats">
+            <span><i class="fas fa-users"></i> 50 volunteers coordinated</span>
+            <span><i class="fas fa-box"></i> 2,000+ supplies delivered</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-image">
+          <i class="fas fa-tent"></i>
+        </div>
+        <div class="story-content">
+          <span class="story-location">Urban Housing Crisis | December 2024</span>
+          <h3>Emergency Shelter in 24 Hours</h3>
+          <p>"(*Fake Story*)When the apartment building collapsed, 200 families were suddenly homeless. RapidRelief volunteers set up an emergency shelter in the local community center within 24 hours. They brought cots, blankets, food, and even toys for the kids. They stayed for weeks, helping families find temporary housing."</p>
+          <p class="story-author">  Community Center Director</p>
+          <div class="story-stats">
+            <span><i class="fas fa-users"></i> 200+ families sheltered</span>
+            <span><i class="fas fa-clock"></i> 24-hour shelter setup</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-image">
+          <i class="fas fa-truck-medical"></i>
+        </div>
+        <div class="story-content">
+          <span class="story-location">Medical Supply Run | November 2024</span>
+          <h3>Life-Saving Medicine Delivered</h3>
+          <p>"(*Fake Story*)The rural clinic was cut off by floods. They were running out of insulin and antibiotics. RapidRelief volunteers organized a convoy: 4 vehicles with high-clearance, carrying medical supplies and a nurse. They got through when official channels couldn't. The clinic director said it saved lives."</p>
+          <p class="story-author">  Dr. Emily Okonkwo</p>
+          <div class="story-stats">
+            <span><i class="fas fa-users"></i> 4 volunteers</span>
+            <span><i class="fas fa-box"></i> 200+ medical kits</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="share-story">
+      <h3>Have a story to share?</h3>
+      <p>If you've been helped by RapidRelief or volunteered with us, we'd love to hear your story.</p>
+      <button class="btn primary" onclick="showPage('contactPage')">
+        <i class="fas fa-share"></i> Share Your Story
+      </button>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  GET INVOLVED PAGE  -->
+<section id="getInvolvedPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-hands-helping"></i> Get Involved</h1>
+      <p>There are many ways to make a difference</p>
+    </div>
+
+    <div class="involvement-options">
+      <div class="involvement-card volunteer-option">
+        <div class="involvement-icon">
+          <i class="fas fa-user-plus"></i>
+        </div>
+        <h2>Become a Volunteer</h2>
+        <p>Join our network of everyday heroes who show up when it matters most.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> No experience required</li>
+          <li><i class="fas fa-check-circle"></i> Choose your own missions</li>
+          <li><i class="fas fa-check-circle"></i> Training provided</li>
+          <li><i class="fas fa-check-circle"></i> See your impact in real-time</li>
+        </ul>
+        <button class="btn primary" onclick="showAuth()">
+          <i class="fas fa-rocket"></i> Sign Up Now
+        </button>
+      </div>
+
+      <div class="involvement-card coordinator-option">
+        <div class="involvement-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h2>Become a Coordinator</h2>
+        <p>Lead response efforts and organize volunteers in crisis zones.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Leadership training</li>
+          <li><i class="fas fa-check-circle"></i> Advanced tools and support</li>
+          <li><i class="fas fa-check-circle"></i> Work with local communities</li>
+          <li><i class="fas fa-check-circle"></i> Coordinate large-scale impact</li>
+        </ul>
+        <button class="btn secondary" onclick="showAuth()">
+          <i class="fas fa-clipboard-check"></i> Apply as Coordinator
+        </button>
+      </div>
+
+      <div class="involvement-card donate-option">
+        <div class="involvement-icon">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h2>Donate Supplies</h2>
+        <p>Help us stock emergency supplies before disasters strike.</p>
+        <div class="supply-list">
+          <h4>Most Needed Items:</h4>
+          <ul>
+            <li><i class="fas fa-water"></i> Bottled water</li>
+            <li><i class="fas fa-utensils"></i> Non-perishable food</li>
+            <li><i class="fas fa-medkit"></i> First aid supplies</li>
+            <li><i class="fas fa-blanket"></i> Blankets & warm clothing</li>
+            <li><i class="fas fa-flashlight"></i> Flashlights & batteries</li>
+            <li><i class="fas fa-tent"></i> Tents & tarps</li>
+          </ul>
+        </div>
+        <button class="btn primary" onclick="showPage('contactPage')">
+          <i class="fas fa-box"></i> Donate Items
+        </button>
+      </div>
+
+      <div class="involvement-card partner-option">
+        <div class="involvement-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h2>Partner With Us</h2>
+        <p>Organizations can amplify our impact through partnerships.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Corporate sponsorship</li>
+          <li><i class="fas fa-check-circle"></i> Nonprofit collaboration</li>
+          <li><i class="fas fa-check-circle"></i> Government agency coordination</li>
+          <li><i class="fas fa-check-circle"></i> Supply chain support</li>
+        </ul>
+        <button class="btn secondary" onclick="showPage('contactPage')">
+          <i class="fas fa-handshake"></i> Become a Partner
+        </button>
+      </div>
+
+      <div class="involvement-card fund-option">
+        <div class="involvement-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h2>Fundraise for Us</h2>
+        <p>Start a fundraiser to help us buy supplies and support volunteers.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Birthday fundraisers</li>
+          <li><i class="fas fa-check-circle"></i> Corporate matching</li>
+          <li><i class="fas fa-check-circle"></i> Community events</li>
+          <li><i class="fas fa-check-circle"></i> Online campaigns</li>
+        </ul>
+        <button class="btn primary" onclick="showPage('contactPage')">
+          <i class="fas fa-dollar-sign"></i> Start Fundraising
+        </button>
+      </div>
+
+      <div class="involvement-card spread-option">
+        <div class="involvement-icon">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <h2>Spread the Word</h2>
+        <p>Help us reach more volunteers and communities in need.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Follow us on social media</li>
+          <li><i class="fas fa-check-circle"></i> Share our stories</li>
+          <li><i class="fas fa-check-circle"></i> Tell your friends</li>
+          <li><i class="fas fa-check-circle"></i> Host an info session</li>
+        </ul>
+        <div class="social-share">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  RESOURCES PAGE  -->
+<section id="resourcesPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-book-open"></i> Emergency Resources</h1>
+      <p>Guides, checklists, and tools to prepare and respond</p>
+    </div>
+
+    <div class="resources-grid">
+      <div class="resource-category">
+        <h2><i class="fas fa-shield-alt"></i> Before Disaster Strikes</h2>
+        <div class="resource-items">
+          <div class="resource-item">
+            <h3>Emergency Kit Checklist</h3>
+            <p>Everything your family needs to survive 72 hours on your own.</p>
+            <ul>
+              <li>Water (1 gallon per person per day)</li>
+              <li>Non-perishable food (3-day supply)</li>
+              <li>First aid kit & medications</li>
+              <li>Flashlight & extra batteries</li>
+              <li>Portable phone charger</li>
+              <li>Important documents (copies)</li>
+              <li>Cash (ATMs may not work)</li>
+              <li>Whistle to signal for help</li>
+              <li>Dust masks & duct tape</li>
+            </ul>
+            <button class="btn-resource">Download Checklist</button>
+          </div>
+
+          <div class="resource-item">
+            <h3>Family Emergency Plan</h3>
+            <p>Create a plan so everyone knows what to do.</p>
+            <ul>
+              <li>Choose meeting places (near home & outside neighborhood)</li>
+              <li>Pick an out-of-area contact</li>
+              <li>Learn evacuation routes</li>
+              <li>Plan for pets</li>
+              <li>Know how to shut off utilities</li>
+            </ul>
+            <button class="btn-resource">Download Template</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2><i class="fas fa-exclamation-triangle"></i> During an Emergency</h2>
+        <div class="resource-items">
+          <div class="resource-item">
+            <h3>Flood Safety Guide</h3>
+            <p>What to do when floodwaters rise.</p>
+            <ul>
+              <li>Move to higher ground immediately</li>
+              <li>Never walk or drive through floodwater</li>
+              <li>Avoid electrical equipment</li>
+              <li>Listen to emergency alerts</li>
+              <li>Evacuate if told to do so</li>
+            </ul>
+            <button class="btn-resource">Read Full Guide</button>
+          </div>
+
+          <div class="resource-item">
+            <h3>Earthquake Safety</h3>
+            <p>Drop, cover, and hold on.</p>
+            <ul>
+              <li>DROP to the ground</li>
+              <li>COVER under sturdy furniture</li>
+              <li>HOLD ON until shaking stops</li>
+              <li>Stay indoors if safe</li>
+              <li>Expect aftershocks</li>
+            </ul>
+            <button class="btn-resource">Read Full Guide</button>
+          </div>
+
+          <div class="resource-item">
+            <h3>Hurricane Preparedness</h3>
+            <p>Before, during, and after the storm.</p>
+            <ul>
+              <li>Know your evacuation zone</li>
+              <li>Board up windows</li>
+              <li>Secure outdoor objects</li>
+              <li>Fill gas tanks</li>
+              <li>Charge all devices</li>
+            </ul>
+            <button class="btn-resource">Read Full Guide</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2><i class="fas fa-heartbeat"></i> After the Crisis</h2>
+        <div class="resource-items">
+          <div class="resource-item">
+            <h3>Recovery Checklist</h3>
+            <p>Steps to take after the immediate danger passes.</p>
+            <ul>
+              <li>Check for injuries</li>
+              <li>Document damage for insurance</li>
+              <li>Contact family</li>
+              <li>Check on neighbors</li>
+              <li>Avoid damaged buildings</li>
+              <li>Watch for hazards</li>
+            </ul>
+            <button class="btn-resource">Download Checklist</button>
+          </div>
+
+          <div class="resource-item">
+            <h3>Mental Health Support</h3>
+            <p>Coping with trauma after disaster.</p>
+            <ul>
+              <li>Talk about your feelings</li>
+              <li>Take breaks from news</li>
+              <li>Maintain routines</li>
+              <li>Connect with others</li>
+              <li>Seek professional help if needed</li>
+            </ul>
+            <button class="btn-resource">Get Resources</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2><i class="fas fa-users"></i> Volunteer Resources</h2>
+        <div class="resource-items">
+          <div class="resource-item">
+            <h3>Volunteer Training Manual</h3>
+            <p>Everything you need to know before your first mission.</p>
+            <ul>
+              <li>Safety protocols</li>
+              <li>Communication guidelines</li>
+              <li>Supply handling</li>
+              <li>Working with affected communities</li>
+              <li>Self-care tips</li>
+            </ul>
+            <button class="btn-resource">Read Manual</button>
+          </div>
+
+          <div class="resource-item">
+            <h3>Coordinator Toolkit</h3>
+            <p>Advanced resources for team leaders.</p>
+            <ul>
+              <li>Incident command system</li>
+              <li>Volunteer management</li>
+              <li>Supply chain logistics</li>
+              <li>Safety assessments</li>
+              <li>Reporting templates</li>
+            </ul>
+            <button class="btn-resource">Access Toolkit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h2><i class="fas fa-phone-alt"></i> Emergency Contacts</h2>
+        <div class="contact-list">
+          <div class="contact-item">
+            <h4>Emergency Services</h4>
+            <p><i class="fas fa-phone"></i> 911</p>
+          </div>
+          <div class="contact-item">
+            <h4>FEMA</h4>
+            <p><i class="fas fa-phone"></i> 1-800-621-3362</p>
+          </div>
+          <div class="contact-item">
+            <h4>Red Cross</h4>
+            <p><i class="fas fa-phone"></i> 1-800-733-2767</p>
+          </div>
+          <div class="contact-item">
+            <h4>Poison Control</h4>
+            <p><i class="fas fa-phone"></i> 1-800-222-1222</p>
+          </div>
+          <div class="contact-item">
+            <h4>Disaster Distress Helpline</h4>
+            <p><i class="fas fa-phone"></i> 1-800-985-5990</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  CONTACT PAGE  -->
+<section id="contactPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+      <p>Get in touch with our team</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Visit Us</h3>
+          <p>1070 Morse rd<br></p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-phone"></i>
+          <h3>Call Us</h3>
+          <p>Emergency: <strong>1-800-RAPID-01</strong><br>General: <strong>1-800-HELP-NOW</strong></p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email Us</h3>
+          <p>emergency@rapidrelief.org<br>info@rapidrelief.org</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <h3>Hours</h3>
+          <p>Emergency Response: 24/7<br>Office: Mon-Fri 8am-2pm</p>
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label>Your Email *</label>
+              <input type="email" placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>General Inquiry</option>
+              <option>Volunteer Question</option>
+              <option>Partnership Opportunity</option>
+              <option>Donation Inquiry</option>
+              <option>Emergency Request</option>
+              <option>Report an Issue</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea rows="6" placeholder="How can we help you?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox"> I'd like to receive updates about volunteer opportunities
+            </label>
+          </div>
+
+          <button type="submit" class="btn primary" onclick="alert('Thank you for your message! We\'ll get back to you soon.'); return false;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+      <div class="emergency-notice">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>
+          <h3>For Emergencies Only</h3>
+          <p>If this is a life-threatening emergency, please call 911 immediately. For disaster response coordination, call our emergency line: <strong>1-800-RAPID-01</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  FAQ PAGE  -->
+<section id="faqPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+      <p>Find answers to common questions about RapidRelief</p>
+    </div>
+
+    <div class="faq-search">
+      <input type="text" id="faqSearchInput" placeholder="Search questions...">
+      <button onclick="searchFAQ()"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="faq-categories">
+      <button class="faq-category active" onclick="filterFAQ('all')">All</button>
+      <button class="faq-category" onclick="filterFAQ('volunteers')">Volunteers</button>
+      <button class="faq-category" onclick="filterFAQ('coordinators')">Coordinators</button>
+      <button class="faq-category" onclick="filterFAQ('donations')">Donations</button>
+      <button class="faq-category" onclick="filterFAQ('safety')">Safety</button>
+      <button class="faq-category" onclick="filterFAQ('general')">General</button>
+    </div>
+
+    <div class="faq-container" id="faqContainer">
+      <div class="faq-item" data-category="volunteers">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>How do I become a volunteer?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Simply click the "Join" button in the navigation bar, fill out your information, and select "Volunteer" as your role. Once registered, you'll have access to available disaster zones and missions in your area. No prior experience is required we provide all the training you need.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="volunteers">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>What training do volunteers receive?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>All volunteers receive access to our online training portal covering: safety protocols, communication guidelines, supply handling, working with affected communities, and self-care. Coordinators receive additional training in incident command, volunteer management, and logistics. In-person training sessions are offered in major cities.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="general">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>How quickly do you respond to disasters?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Our goal is to have volunteers on the ground within 4-6 hours of a disaster striking. In our most successful responses, we've had volunteers deployed within 2 hours. Speed depends on volunteer availability in the area, accessibility of the disaster zone, and safety conditions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="volunteers">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Do I need my own supplies to volunteer?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Not necessarily. We provide supplies based on mission needs. However, if you have a truck, medical training, or specialized equipment, let us know those skills are especially valuable. Volunteers are encouraged to bring water, snacks, and personal safety gear if possible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="volunteers">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Is there a minimum time commitment?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>No you can volunteer as much or as little as you're able. Some volunteers join every mission, others help once a month, and some only during major disasters. You choose which missions to join based on your availability and interest.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="safety">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>How do you ensure volunteer safety?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Safety is our top priority. Before any mission, coordinators assess the zone for hazards. Volunteers never enter unsafe areas alone. We maintain constant communication, track volunteer locations, and have evacuation plans ready. All volunteers must complete safety training before their first mission.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="donations">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Can I donate money instead of time?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Financial donations help us purchase supplies, maintain our platform, and train volunteers. You can donate through our website or contact us about corporate sponsorship opportunities. All donations are tax-deductible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="general">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>What areas do you serve?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We currently have active volunteers in the Northeast region and are expanding. Our platform is designed to work anywhere as more volunteers join in new areas, we can respond to disasters there. If your community needs us, sign up as a volunteer or coordinator to help us establish a presence.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="coordinators">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>How do I become a coordinator?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>After volunteering on several missions, you can apply for coordinator training. The training covers leadership, incident command, volunteer management, and logistics. Once certified, you'll be able to create disaster zones, assign missions, and coordinate teams.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="partnerships">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Can organizations partner with you?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! We welcome partnerships with corporations, nonprofits, and government agencies. Partners can provide supplies, funding, volunteers, or logistical support. Contact us to discuss partnership opportunities.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-not-found hidden" id="faqNotFound">
+      <p>No questions found matching your search.</p>
+    </div>
+
+    <div class="faq-contact">
+      <h3>Still have questions?</h3>
+      <p>Can't find what you're looking for? Contact us directly.</p>
+      <button class="btn primary" onclick="showPage('contactPage')">
+        <i class="fas fa-envelope"></i> Contact Us
+      </button>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  LEGAL PAGES  -->
+<section id="privacyPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-lock"></i> Privacy Policy</h1>
+      <p>How we protect and handle your information</p>
+    </div>
+
+    <div class="legal-content">
+      <div class="legal-section">
+        <h2>Last Updated: February 2026</h2>
+        <p>At RapidRelief, we take your privacy seriously. This policy describes how we collect, use, and protect your personal information.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Information We Collect</h2>
+        <ul>
+          <li><strong>Account Information:</strong> Name, email, phone number, location</li>
+          <li><strong>Volunteer Information:</strong> Skills, availability, emergency contacts</li>
+          <li><strong>Mission Data:</strong> Missions joined, hours volunteered, supplies delivered</li>
+          <li><strong>Usage Data:</strong> How you interact with our platform</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>How We Use Your Information</h2>
+        <ul>
+          <li>To connect you with disaster response missions</li>
+          <li>To coordinate volunteer efforts</li>
+          <li>To track and report impact</li>
+          <li>To communicate important updates</li>
+          <li>To improve our services</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>Information Sharing</h2>
+        <p>We share information only as necessary for disaster response:</p>
+        <ul>
+          <li>With coordinators organizing missions</li>
+          <li>With other volunteers on your team</li>
+          <li>With emergency services when required</li>
+          <li>We never sell your data</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>Data Security</h2>
+        <p>We use industry-standard encryption and security measures to protect your information. Access to sensitive data is restricted to authorized personnel only.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Your Rights</h2>
+        <p>You can request to view, update, or delete your data at any time by contacting us.</p>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<section id="termsPage" class="hidden page-section">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1><i class="fas fa-file-contract"></i> Terms of Service</h1>
+      <p>Terms and conditions for using RapidRelief</p>
+    </div>
+
+    <div class="legal-content">
+      <div class="legal-section">
+        <h2>Last Updated: February 2026</h2>
+        <p>By using RapidRelief, you agree to these terms. Please read them carefully.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Volunteer Responsibilities</h2>
+        <ul>
+          <li>Follow all safety protocols and instructions</li>
+          <li>Only accept missions you're qualified for</li>
+          <li>Be honest about your skills and availability</li>
+          <li>Respect affected communities and their needs</li>
+          <li>Report any issues or concerns immediately</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>Coordinator Responsibilities</h2>
+        <ul>
+          <li>Ensure volunteer safety at all times</li>
+          <li>Provide clear instructions and support</li>
+          <li>Assess risks before deploying volunteers</li>
+          <li>Maintain accurate records of missions</li>
+          <li>Communicate effectively with all stakeholders</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>Limitation of Liability</h2>
+        <p>RapidRelief connects volunteers with communities in need but cannot guarantee outcomes. Volunteers participate at their own risk. We provide training and protocols but are not liable for individual actions or unforeseen circumstances.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Code of Conduct</h2>
+        <p>All users must treat others with respect, maintain professional behavior, and represent RapidRelief positively. Violations may result in account termination.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Changes to Terms</h2>
+        <p>We may update these terms periodically. Continued use of the platform constitutes acceptance of updated terms.</p>
+      </div>
+    </div>
+
+    <button class="btn-back" onclick="goHome()">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </div>
+</section>
+
+<!--  AUTH PAGE  -->
+<section id="authPage" class="hidden">
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2><i class="fas fa-lock"></i> Join Us</h2>
+        <p>Create an account or log in to start helping your community</p>
+      </div>
+
+      <div class="auth-form">
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Full Name</label>
+          <input id="fullName" type="text" placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-envelope"></i> Email</label>
+          <input id="email" type="email" placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-key"></i> Password</label>
+          <input id="password" type="password" placeholder="••••••••">
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-briefcase"></i> Your Role</label>
+          <select id="roleSelect">
+            <option value="student">Volunteer - I want to help on the ground</option>
+            <option value="instructor">Coordinator - I'm organizing relief efforts</option>
+          </select>
+        </div>
+
+        <div class="form-buttons">
+          <button id="loginBtn" class="btn primary">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+          <button id="signupBtn" class="btn secondary">
+            <i class="fas fa-user-plus"></i> Create Account
+          </button>
+        </div>
+      </div>
+
+      <button class="btn-back" onclick="goHome()">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </button>
+    </div>
+  </div>
+</section>
+
+<!--  DASHBOARD  -->
+<section id="dashboard" class="hidden">
+  <div class="dashboard-wrapper">
+    <!-- VOLUNTEER SIDE -->
+    <div id="studentSection" class="hidden dashboard-layout">
+      <aside class="sidebar-new">
+        <div class="sidebar-header">
+          <h3>
+            <i class="fas fa-user-tie"></i> Volunteer Panel
+          </h3>
+          <p id="volunteerName" class="user-name"></p>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-item active" onclick="showVolunteerTab('zones')">
+            <i class="fas fa-map-location-dot"></i> Disaster Zones
+          </button>
+          <button class="nav-item" onclick="showVolunteerTab('missions')">
+            <i class="fas fa-tasks"></i> Active Missions
+          </button>
+          <button class="nav-item" onclick="showVolunteerTab('logs')">
+            <i class="fas fa-history"></i> My Contributions
+          </button>
+          <button class="nav-item" onclick="showVolunteerTab('profile')">
+            <i class="fas fa-user-circle"></i> My Profile
+          </button>
+        </nav>
+        <button class="btn-logout" id="volunteerLogout">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </aside>
+
+      <main class="main-content">
+        <div id="volZones" class="content-section">
+          <div class="section-header">
+            <h2><i class="fas fa-map-location-dot"></i> Available Disaster Zones</h2>
+            <p>Select a zone to join relief efforts</p>
+          </div>
+          <div id="zoneList" class="zones-grid"></div>
+        </div>
+
+        <div id="volMissions" class="content-section hidden">
+          <div class="section-header">
+            <h2><i class="fas fa-tasks"></i> Your Assigned Missions</h2>
+            <p>Missions you're currently working on</p>
+          </div>
+          <div id="missionList" class="missions-grid"></div>
+        </div>
+
+        <div id="volLogs" class="content-section hidden">
+          <div class="section-header">
+            <h2><i class="fas fa-history"></i> Contribution History</h2>
+            <p>Your impact over time</p>
+          </div>
+          <div id="studentWorkoutList" class="logs-list"></div>
+        </div>
+
+        <div id="volProfile" class="content-section hidden">
+          <div class="section-header">
+            <h2><i class="fas fa-user-circle"></i> Your Profile</h2>
+            <p>View and manage your information</p>
+          </div>
+          <div id="profileContent" class="profile-card"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- COORDINATOR SIDE -->
+    <div id="instructorSection" class="hidden dashboard-layout">
+      <aside class="sidebar-new">
+        <div class="sidebar-header">
+          <h3>
+            <i class="fas fa-hard-hat"></i> Coordinator Panel
+          </h3>
+          <p id="coordinatorName" class="user-name"></p>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-item active" onclick="showCoordinatorTab('createZone')">
+            <i class="fas fa-map"></i> Create Zone
+          </button>
+          <button class="nav-item" onclick="showCoordinatorTab('createMission')">
+            <i class="fas fa-plus-circle"></i> Create Mission
+          </button>
+          <button class="nav-item" onclick="showCoordinatorTab('analytics')">
+            <i class="fas fa-chart-bar"></i> Analytics
+          </button>
+          <button class="nav-item" onclick="showCoordinatorTab('teams')">
+            <i class="fas fa-users"></i> Teams
+          </button>
+        </nav>
+        <button class="btn-logout" id="coordinatorLogout">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </aside>
+
+      <main class="main-content">
+        <div id="coordZone" class="content-section">
+          <div class="section-header">
+            <h2><i class="fas fa-map"></i> Create Disaster Zone</h2>
+            <p>Set up a new crisis response zone</p>
+          </div>
+          <div class="form-card">
+            <input id="className" type="text" placeholder="Zone Name (e.g., Northeast Flood Zone)">
+            <textarea id="zoneDescription" placeholder="Describe the situation and needs..."></textarea>
+            <button id="createClassBtn" class="btn primary">
+              <i class="fas fa-plus"></i> Create Zone
+            </button>
+            <div id="classList" class="zones-created"></div>
+          </div>
+        </div>
+
+        <div id="coordMission" class="content-section hidden">
+          <div class="section-header">
+            <h2><i class="fas fa-plus-circle"></i> Create Relief Mission</h2>
+            <p>Deploy a new aid mission</p>
+          </div>
+          <div class="form-card">
+            <input id="workoutTitle" type="text" placeholder="Mission Name (e.g., Food Distribution)">
+            <input id="exerciseName" type="text" placeholder="Aid Type (e.g., Food, Water, Medical)">
+            <input id="sets" type="number" placeholder="Priority Level (1-5)" min="1" max="5">
+            <input id="reps" type="number" placeholder="Volunteers Needed" min="1">
+            <input id="videoUrl" type="text" placeholder="Resource URL or Description">
+            <button id="saveWorkoutBtn" class="btn primary">
+              <i class="fas fa-rocket"></i> Deploy Mission
+            </button>
+            <div id="workoutStatus" class="status-message"></div>
+          </div>
+        </div>
+
+        <div id="coordAnalytics" class="content-section hidden">
+          <div class="section-header">
+            <h2><i class="fas fa-chart-bar"></i> Impact Analytics</h2>
+            <p>Real-time platform performance metrics</p>
+          </div>
+          <div id="analyticsData" class="analytics-container"></div>
+        </div>
+
+        <div id="coordTeams" class="content-section hidden">
+          <div class="section-header">
+            <h2><i class="fas fa-users"></i> Active Teams</h2>
+            <p>Manage coordinator teams and assignments</p>
+          </div>
+          <div id="teamsData" class="teams-grid"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<!--  FOOTER  -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3><i class="fas fa-shield-alt"></i> RapidRelief</h3>
+      <p>Connecting volunteers with communities in crisis. Fast. Direct. Effective.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#" onclick="goHome()">Home</a></li>
+        <li><a href="#" onclick="showPage('aboutPage')">About Us</a></li>
+        <li><a href="#" onclick="showPage('howItWorksPage')">How It Works</a></li>
+        <li><a href="#" onclick="showPage('storiesPage')">Success Stories</a></li>
+        <li><a href="#" onclick="showPage('getInvolvedPage')">Get Involved</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('resourcesPage')">Emergency Guides</a></li>
+        <li><a href="#" onclick="showPage('faqPage')">FAQ</a></li>
+        <li><a href="#" onclick="showPage('contactPage')">Contact</a></li>
+        <li><a href="#" onclick="showPage('privacyPage')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('termsPage')">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p><i class="fas fa-phone"></i> 1-800-RAPID-01</p>
+      <p><i class="fas fa-envelope"></i> info@rapidrelief.org</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Relief Avenue, Cityville</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 RapidRelief. All rights reserved. | <a href="#" onclick="showPage('privacyPage')">Privacy</a> | <a href="#" onclick="showPage('termsPage')">Terms</a></p>
+  </div>
+</footer>
+
+<!--  JAVASCRIPT  -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Get all page elements
+      window.homePage = document.getElementById("homePage");
+      window.authPage = document.getElementById("authPage");
+      window.dashboard = document.getElementById("dashboard");
+      window.studentSection = document.getElementById("studentSection");
+      window.instructorSection = document.getElementById("instructorSection");
+      
+      // New pages
+      window.aboutPage = document.getElementById("aboutPage");
+      window.howItWorksPage = document.getElementById("howItWorksPage");
+      window.storiesPage = document.getElementById("storiesPage");
+      window.getInvolvedPage = document.getElementById("getInvolvedPage");
+      window.resourcesPage = document.getElementById("resourcesPage");
+      window.contactPage = document.getElementById("contactPage");
+      window.faqPage = document.getElementById("faqPage");
+      window.privacyPage = document.getElementById("privacyPage");
+      window.termsPage = document.getElementById("termsPage");
+      
+      window.currentUser = null;
+
+      //  MOBILE MENU FUNCTIONALITY 
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navMenu = document.getElementById('navMenu');
+
+      if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              navMenu.classList.toggle('active');
+              
+              // Change icon based on menu state
+              const icon = this.querySelector('i');
+              if (navMenu.classList.contains('active')) {
+                  icon.className = 'fas fa-times';
+              } else {
+                  icon.className = 'fas fa-bars';
+              }
+          });
+      }
+
+      // Function to close mobile menu
+      window.closeMobileMenu = function() {
+          if (navMenu) {
+              navMenu.classList.remove('active');
+              const icon = mobileMenuBtn?.querySelector('i');
+              if (icon) icon.className = 'fas fa-bars';
+          }
+          // Close any open dropdowns
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+      }
+
+      // Toggle dropdown in mobile
+      window.toggleDropdown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          const dropdown = event.currentTarget.closest('.dropdown');
+          dropdown.classList.toggle('active');
+      }
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+          link.addEventListener('click', function() {
+              closeMobileMenu();
+          });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+          if (navMenu && mobileMenuBtn) {
+              if (!navMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                  navMenu.classList.remove('active');
+                  const icon = mobileMenuBtn.querySelector('i');
+                  if (icon) icon.className = 'fas fa-bars';
+                  // Close any open dropdowns
+                  document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+              }
+          }
+      });
+
+      // Prevent clicks inside dropdown from closing it
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.addEventListener('click', function(e) {
+              e.stopPropagation();
+          });
+      });
+
+      //  NAVIGATION FUNCTIONS 
+      window.goHome = function() {
+          hideAllPages();
+          homePage.classList.remove("hidden");
+          closeMobileMenu();
+      }
+
+      window.showPage = function(pageId) {
+          hideAllPages();
+          const page = document.getElementById(pageId);
+          if (page) page.classList.remove("hidden");
+          closeMobileMenu();
+      }
+
+      window.showAuth = function() {
+          hideAllPages();
+          authPage.classList.remove("hidden");
+          closeMobileMenu();
+      }
+
+      function hideAllPages() {
+          const allPages = [homePage, authPage, dashboard, aboutPage, howItWorksPage, 
+                           storiesPage, getInvolvedPage, resourcesPage, contactPage, 
+                           faqPage, privacyPage, termsPage];
+          allPages.forEach(page => {
+              if (page) page.classList.add("hidden");
+          });
+      }
+
+      window.scrollToImpact = function() {
+          goHome();
+          setTimeout(() => {
+              const impactSection = document.getElementById("impactSection");
+              if (impactSection) {
+                  impactSection.scrollIntoView({ behavior: "smooth" });
+              }
+          }, 100);
+          closeMobileMenu();
+      }
+
+      window.showFeatures = function() {
+          goHome();
+          setTimeout(() => {
+              const featuresSection = document.getElementById("featuresSection");
+              if (featuresSection) {
+                  featuresSection.scrollIntoView({ behavior: "smooth" });
+              }
+          }, 100);
+          closeMobileMenu();
+      }
+
+      //  AUTH BUTTONS 
+      document.getElementById("loginBtnNav").onclick = function() {
+          closeMobileMenu();
+          showAuth();
+      };
+
+      document.getElementById("signupBtnNav").onclick = function() {
+          closeMobileMenu();
+          showAuth();
+      };
+
+      document.getElementById("logoHome").onclick = function() {
+          closeMobileMenu();
+          goHome();
+      };
+
+      //  DROPDOWN FUNCTIONALITY 
+      // Desktop dropdown hover/click
+      if (window.innerWidth > 768) {
+          document.querySelectorAll('.dropdown').forEach(dropdown => {
+              dropdown.addEventListener('mouseenter', function() {
+                  this.classList.add('active');
+              });
+              dropdown.addEventListener('mouseleave', function() {
+                  this.classList.remove('active');
+              });
+          });
+      }
+
+      /*  AUTH SIMULATION  */
+      document.getElementById("loginBtn").onclick = function() {
+          const fullName = document.getElementById("fullName");
+          const email = document.getElementById("email");
+          const password = document.getElementById("password");
+          const roleSelect = document.getElementById("roleSelect");
+          
+          if (!fullName.value || !email.value || !password.value) {
+              alert("Please fill in all fields");
+              return;
+          }
+          currentUser = { name: fullName.value, role: roleSelect.value };
+          enterDashboard();
+      };
+
+      document.getElementById("signupBtn").onclick = function() {
+          const fullName = document.getElementById("fullName");
+          const email = document.getElementById("email");
+          const password = document.getElementById("password");
+          const roleSelect = document.getElementById("roleSelect");
+          
+          if (!fullName.value || !email.value || !password.value) {
+              alert("Please fill in all fields");
+              return;
+          }
+          currentUser = { name: fullName.value, role: roleSelect.value };
+          enterDashboard();
+      };
+
+      function enterDashboard() {
+          hideAllPages();
+          dashboard.classList.remove("hidden");
+          closeMobileMenu();
+
+          if (currentUser.role === "student") {
+              studentSection.classList.remove("hidden");
+              instructorSection.classList.add("hidden");
+              document.getElementById("volunteerName").textContent = `Welcome, ${currentUser.name}`;
+              generateVolunteerData();
+             
+              document.getElementById("volunteerLogout").onclick = function() {
+                  currentUser = null;
+                  goHome();
+              };
+          } else {
+              instructorSection.classList.remove("hidden");
+              studentSection.classList.add("hidden");
+              document.getElementById("coordinatorName").textContent = `Welcome, ${currentUser.name}`;
+              generateAnalytics();
+             
+              document.getElementById("coordinatorLogout").onclick = function() {
+                  currentUser = null;
+                  goHome();
+              };
+          }
+      }
+
+      /*  VOLUNTEER UI  */
+      window.showVolunteerTab = function(tab) {
+          document.querySelectorAll(".content-section").forEach(el => el.classList.add("hidden"));
+          document.querySelectorAll(".sidebar-nav .nav-item").forEach(el => el.classList.remove("active"));
+         
+          const tabMap = {
+              "zones": "volZones",
+              "missions": "volMissions",
+              "logs": "volLogs",
+              "profile": "volProfile"
+          };
+         
+          if (tabMap[tab]) {
+              document.getElementById(tabMap[tab]).classList.remove("hidden");
+          }
+         
+          event.target.closest(".nav-item").classList.add("active");
+      };
+
+      function generateVolunteerData() {
+          const zoneList = document.getElementById("zoneList");
+          if (!zoneList) return;
+          
+          zoneList.innerHTML = "";
+
+          const zones = [
+              { name: "Northeast Floods", status: "High Need", volunteers: 0, description: "Heavy flooding affecting 500+ families. Need food, water, medical supplies." },
+              { name: "Storm Recovery", status: "Critical", volunteers: 0, description: "Post-storm cleanup and emergency shelter. Urgent many families still without power." },
+              { name: "Coastal Community Aid", status: "Moderate", volunteers: 0, description: "Supporting families dealing with coastal damage. Help with repairs and supplies." },
+              { name: "Urban Housing Crisis", status: "High Need", volunteers: 0, description: "Building collapsed. 200+ families need housing and immediate assistance." }
+          ];
+
+          zones.forEach((zone) => {
+              zoneList.innerHTML += `
+                  <div class="zone-card-new">
+                      <div class="zone-header">
+                          <h3>${zone.name}</h3>
+                          <span class="zone-status ${zone.status.toLowerCase().replace(" ", "-")}">${zone.status}</span>
+                      </div>
+                      <p class="zone-description">${zone.description}</p>
+                      <div class="zone-meta">
+                          <span><i class="fas fa-users"></i> ${zone.volunteers} volunteers</span>
+                      </div>
+                      <button class="btn primary" onclick="joinZone('${zone.name}')">
+                          <i class="fas fa-hand-paper"></i> Join Zone
+                      </button>
+                  </div>
+              `;
+          });
+      }
+
+      window.joinZone = function(zoneName) {
+          alert(`✓ You're in! We'll send you updates about ${zoneName}. Check your missions tab for what we need.`);
+      };
+
+      /*  COORDINATOR UI  */
+      window.showCoordinatorTab = function(tab) {
+          document.querySelectorAll(".content-section").forEach(el => el.classList.add("hidden"));
+          document.querySelectorAll(".sidebar-nav .nav-item").forEach(el => el.classList.remove("active"));
+         
+          const tabMap = {
+              "createZone": "coordZone",
+              "createMission": "coordMission",
+              "analytics": "coordAnalytics",
+              "teams": "coordTeams"
+          };
+         
+          if (tabMap[tab]) {
+              document.getElementById(tabMap[tab]).classList.remove("hidden");
+          }
+         
+          event.target.closest(".nav-item").classList.add("active");
+      };
+
+      document.getElementById("createClassBtn").onclick = function() {
+          const zoneName = document.getElementById("className").value;
+          if (zoneName.trim() === "") {
+              alert("Please enter a zone name");
+              return;
+          }
+         
+          const classList = document.getElementById("classList");
+          classList.innerHTML += `
+              <div class="zone-item-created">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                      <h4>${zoneName}</h4>
+                      <p>Created at ${new Date().toLocaleTimeString()}</p>
+                  </div>
+                  <button class="btn-delete" onclick="this.parentElement.remove()">
+                      <i class="fas fa-trash"></i>
+                  </button>
+              </div>
+          `;
+         
+          document.getElementById("className").value = "";
+          document.getElementById("zoneDescription").value = "";
+      };
+
+      document.getElementById("saveWorkoutBtn").onclick = function() {
+          const title = document.getElementById("workoutTitle").value;
+          const aidType = document.getElementById("exerciseName").value;
+         
+          if (!title || !aidType) {
+              alert("Please fill in all fields");
+              return;
+          }
+         
+          const status = document.getElementById("workoutStatus");
+          status.innerHTML = `<div class="success-message">✓ "${title}" is live! Volunteers are getting notified now.</div>`;
+         
+          document.getElementById("workoutTitle").value = "";
+          document.getElementById("exerciseName").value = "";
+          document.getElementById("sets").value = "";
+          document.getElementById("reps").value = "";
+          document.getElementById("videoUrl").value = "";
+      };
+
+      function generateAnalytics() {
+          const analytics = document.getElementById("analyticsData");
+          if (!analytics) return;
+          
+          analytics.innerHTML = `
+              <div class="analytics-grid-new">
+                  <div class="stat-card-new">
+                      <div class="stat-icon volunteer-icon">
+                          <i class="fas fa-users"></i>
+                      </div>
+                      <div class="stat-content">
+                          <h4>Volunteers Out There</h4>
+                          <p>4</p>
+                          <span class="stat-change">+4 this month</span>
+                      </div>
+                  </div>
+                 
+                  <div class="stat-card-new">
+                      <div class="stat-icon zones-icon">
+                          <i class="fas fa-map"></i>
+                      </div>
+                      <div class="stat-content">
+                          <h4>Active Crisis Zones</h4>
+                          <p>N/A</p>
+                          <span class="stat-change">no new emergencies</span>
+                      </div>
+                  </div>
+                 
+                  <div class="stat-card-new">
+                      <div class="stat-icon aid-icon">
+                          <i class="fas fa-box"></i>
+                      </div>
+                      <div class="stat-content">
+                          <h4>Supplies Delivered</h4>
+                          <p>N/A</p>
+                          <span class="stat-change">no new supplies delivered</span>
+                      </div>
+                  </div>
+                 
+                  <div class="stat-card-new">
+                      <div class="stat-icon poverty-icon">
+                          <i class="fas fa-chart-line"></i>
+                      </div>
+                      <div class="stat-content">
+                          <h4>Families Stabilized</h4>
+                          <p>N/A%</p>
+                          <span class="stat-change">same as last month</span>
+                      </div>
+                  </div>
+              </div>
+             
+              <div class="analytics-section">
+                  <h3>What's Happening Right Now</h3>
+                  <div class="activity-list">
+                      <div class="activity-item">
+                          <span class="activity-icon">🍲</span>
+                          <p><strong>Food Distribution at Northeast Floods</strong>   4 volunteers just wrapped up</p>
+                          <small>2 hours ago</small>
+                      </div>
+                      <div class="activity-item">
+                          <span class="activity-icon">💧</span>
+                          <p><strong>Water & Medical Supplies</strong> still being delivered to Storm Recovery zone</p>
+                          <small>45 minutes ago</small>
+                      </div>
+                      <div class="activity-item">
+                          <span class="activity-icon">🏠</span>
+                          <p><strong>Emergency Shelter Setup</strong> started at Urban Housing Crisis</p>
+                          <small>10 minutes ago</small>
+                      </div>
+                  </div>
+              </div>
+          `;
+
+          const teamsData = document.getElementById("teamsData");
+          if (teamsData) {
+              teamsData.innerHTML = `
+                  <div class="team-card">
+                      <h4><i class="fas fa-users"></i> Northeast Team</h4>
+                      <p>Led by Jessica | N/A coordinators • 4 volunteers</p>
+                      <p>Status: <span style="color: #27ae60;">All systems go</span></p>
+                  </div>
+                  <div class="team-card">
+                      <h4><i class="fas fa-users"></i> Coastal Team</h4>
+                      <p>Led by David | N/A coordinators • 4 volunteers</p>
+                      <p>Status: <span style="color: #27ae60;">All systems go</span></p>
+                  </div>
+                  <div class="team-card">
+                      <h4><i class="fas fa-users"></i> Urban Support Team</h4>
+                      <p>Led by Elena | N/A coordinators • 4 volunteers</p>
+                      <p>Status: <span style="color: #e74c3c;">Standby mode</span></p>
+                  </div>
+              `;
+          }
+      }
+
+      /*  FAQ FUNCTIONS  */
+      window.toggleFAQ = function(element) {
+          const answer = element.nextElementSibling;
+          const icon = element.querySelector('i');
+          
+          if (answer.style.maxHeight) {
+              answer.style.maxHeight = null;
+              icon.style.transform = 'rotate(0deg)';
+          } else {
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              icon.style.transform = 'rotate(180deg)';
+          }
+      };
+
+      window.searchFAQ = function() {
+          const searchTerm = document.getElementById('faqSearchInput').value.toLowerCase();
+          const faqItems = document.querySelectorAll('.faq-item');
+          let visibleCount = 0;
+
+          faqItems.forEach(item => {
+              const question = item.querySelector('h3').textContent.toLowerCase();
+              const answer = item.querySelector('p').textContent.toLowerCase();
+              
+              if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                  item.style.display = 'block';
+                  visibleCount++;
+              } else {
+                  item.style.display = 'none';
+              }
+          });
+
+          document.getElementById('faqNotFound').classList.toggle('hidden', visibleCount > 0);
+      };
+
+      window.filterFAQ = function(category) {
+          document.querySelectorAll('.faq-category').forEach(btn => btn.classList.remove('active'));
+          event.target.classList.add('active');
+          
+          const faqItems = document.querySelectorAll('.faq-item');
+          let visibleCount = 0;
+
+          faqItems.forEach(item => {
+              if (category === 'all' || item.dataset.category === category) {
+                  item.style.display = 'block';
+                  visibleCount++;
+              } else {
+                  item.style.display = 'none';
+              }
+          });
+
+          document.getElementById('faqNotFound').classList.toggle('hidden', visibleCount > 0);
+      };
+
+      /*  ROLE TABS  */
+      window.showRoleTab = function(role) {
+          document.querySelectorAll('.role-tab').forEach(tab => tab.classList.remove('active'));
+          document.querySelectorAll('.role-content').forEach(content => content.classList.add('hidden'));
+          
+          if (role === 'volunteer') {
+              document.querySelectorAll('.role-tab')[0].classList.add('active');
+              document.getElementById('volunteerGuide').classList.remove('hidden');
+          } else {
+              document.querySelectorAll('.role-tab')[1].classList.add('active');
+              document.getElementById('coordinatorGuide').classList.remove('hidden');
+          }
+      };
+  });
+</script>
+
+</body>
+</html>
